@@ -18,12 +18,8 @@ def main():
         print(count,company)
         for entry in data_to_write:
             if (',') in entry:
-                # index = line_to_write.index(entry)
-                # line_to_write.remove(entry)
                 entry = entry.replace(',', '')
-                # line_to_write.insert(index, entry)
             file.write(entry + ",")
-            # file.write(str(line_to_write))
         count+=1
 
 def GetCompanyInfo(url):
@@ -63,14 +59,7 @@ def GetCompanyInfo(url):
         found_div = found_div[0]
     next_page = found_div.find('a')['href']
 
-    # for entry in line_to_write:
-    #     if (',') in entry:
-    #         # index = line_to_write.index(entry)
-    #         # line_to_write.remove(entry)
-    #         entry = entry.replace(',', '')
-    #         # line_to_write.insert(index, entry)
-    #     file.write(entry + ",")
-    # #file.write(str(line_to_write))
+
     page_to_read.close()
 
     return line_to_write, next_page
